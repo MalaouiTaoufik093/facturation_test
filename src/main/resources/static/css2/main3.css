@@ -1,0 +1,175 @@
+.table.dataTable tbody th, table.dataTable tbody td {
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.table tr:hover {
+	background: #a2d9ce;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover
+	{
+	color: #de1212;;
+	cursor: default;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-bottom-color: #8c676700;
+	box-shadow: 4px -2px 4px black;
+	font-weight: bold;
+}
+
+a:focus, a:hover {
+	color: #fd140f;
+	text-decoration: underline;
+}
+
+.panel {
+	margin-bottom: 20px;
+	background-color: #fff;
+	border: 1px solid #333;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.col-sm-6 {
+	margin-top: -10px;
+}
+
+.table.dataTable tbody th, table.dataTable tbody td {
+	padding: 5px 10px;
+}
+
+.container {
+	padding-right: 27px;
+	padding-left: 158px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.dataTables_wrapper .dataTables_filter {
+	float: right;
+	text-align: left;
+	font-size: 14px;
+}
+
+.dataTables_wrapper .dataTables_length {
+	float: left;
+	margin-top: 15px;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+	margin-left: 0px;
+}
+
+.table.dataTable thead tr th {
+	color: #fff;
+}
+
+#table_garantie thead tr th {
+	color: #fff;
+}
+
+#table_garantie tbody tr:hover {
+	background-color: #c6edfd;
+}
+
+.table.dataTable tbody tr:hover {
+	background-color: #c6edfd;
+}
+
+.table.dataTable thead:hover {
+	color: #ffffff;
+	background-color: #0d85ec;
+	/* Assuming you want the hover color to be white */
+}
+
+.modal-dialog {
+	background-color: #ffffff;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    color: #00a703;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+/************************** styme side bar collapsible ***************
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+    padding: 6px 8px 6px 10px;
+    text-decoration: none;
+    font-size: 17px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+   background-color: #0e983a;
+}
+
+/* Main content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: green;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #fafafa;
+  /*padding-left: 8px;*/
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+/* style of scrolling side bare table*/
+div.scrollmenu {
+  background-color: #f8f8f8;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: #04c;
+  text-align: center;
+  /*padding: 14px;*/
+  text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+  background-color: #688a7e;
+}

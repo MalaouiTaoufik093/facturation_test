@@ -1,0 +1,476 @@
+
+
+<!-- <!DOCTYPE html> -->
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<meta charset="utf-8" />
+<title>Facturation Matu Assurance</title>
+<link rel="icon" type="image/png"
+	href="data:image/jpeg;base64,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" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+<!-- <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.10.20/i18n/French.json"></script> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/daterangepicker.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/3.2.0/css/bootstrap-colorpicker.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.css">
+
+<!-- 	<script src="../../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/3.2.0/js/bootstrap-colorpicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
+
+
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/fixedheader/3.1.7/js/dataTables.fixedHeader.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.6/js/responsive.bootstrap.min.js"></script>
+
+
+<!-- Custom styles -->
+<link rel="stylesheet" href="css/fullcalendar.css">
+<link href="css/widgets.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/style-responsive.css" rel="stylesheet" />
+<link href="css/xcharts.min.css" rel=" stylesheet">
+<link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+<link th:href="@{/css2/main3.css}" rel="stylesheet" />
+
+<link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css" rel="stylesheet">
+
+
+
+<link type="text/css"
+	href="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css"
+	rel="stylesheet" />
+<script type="text/javascript"
+	src="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/js/dataTables.checkboxes.min.js"></script>
+
+
+<style>
+.table tr:hover {
+	background: #a2d9ce;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover
+	{
+	color: #de1212;;
+	cursor: default;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-bottom-color: #8c676700;
+	box-shadow: 4px -2px 4px black;
+	font-weight: bold;
+}
+
+a:focus, a:hover {
+	color: #fd140f;
+	text-decoration: underline;
+}
+
+.panel {
+	margin-bottom: 20px;
+	background-color: #fff;
+	border: 1px solid #333;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.col-sm-6 {
+	margin-top: -10px;
+}
+
+.table.dataTable tbody th, table.dataTable tbody td {
+	padding: 5px 10px;
+}
+
+.container {
+	padding-right: 27px;
+	padding-left: 158px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.dataTables_wrapper .dataTables_filter {
+	float: right;
+	text-align: left;
+	font-size: 14px;
+}
+
+.dataTables_wrapper .dataTables_length {
+	float: left;
+	margin-top: 15px;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+	margin-left: 0px;
+}
+
+.table.dataTable thead tr th {
+	color: #fff;
+}
+
+#table_garantie thead tr th {
+	color: #fff;
+}
+
+#table_garantie tbody tr:hover {
+	background-color: #c6edfd;
+}
+
+.table.dataTable tbody tr:hover {
+	background-color: #c6edfd;
+}
+
+.table.dataTable thead:hover {
+	color: #ffffff;
+	background-color: #0d85ec;
+	/* Assuming you want the hover color to be white */
+}
+
+.modal-dialog {
+	background-color: #ffffff;
+}
+
+.fa {
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	color: #00a703;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+}
+
+#myModal_exercice {
+	position: absolute;
+	top: 182px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1050;
+	display: none;
+	overflow: hidden;
+	-webkit-overflow-scrolling: touch;
+	outline: 0;
+}
+/************************** styme side bar collapsible ***************
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+    padding: 6px 8px 6px 10px;
+    text-decoration: none;
+    font-size: 17px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+   background-color: #0e983a;
+}
+
+/* Main content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: green;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #fafafa;
+  /*padding-left: 8px;*/
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+/* style of scrolling side bare table*/
+div.scrollmenu {
+  background-color: #f8f8f8;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: #04c;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+  background-color: #688a7e;
+}
+</style>
+
+</head>
+
+<body>
+	
+	 <div th:replace="fragments/header :: header">...</div>
+	<div class="container" style="width: 100%;">
+	<!-- Modale Choix de Client -->
+		<div class="panel panel-primary"
+			style="margin-top: 75px; margin-left: 100px;">
+			<div class="panel-heading">
+				<span class="glyphicon glyphicon-floppy-saved"></span>&nbsp;&nbsp;&nbsp;
+				Liste des Clients : Risque Divers  
+			</div>
+			<div class="panel-body">
+				<table id="employeesTable" class="table  table-bordered responsive "style="width: 100%">
+					<input id="idexercice" name="text" type="hidden" value="2019" >
+					<thead class="bg-primary" style="background-color: #0e983a;">
+						<tr>
+							<th style="text-align: center; color: white;">Id_Clt</th>
+							<th style="text-align: center; color: white;">Client</th>
+							<th style="text-align: center; color: white;">Agence</th>
+							<th style="text-align: center; color: white;">Adresse</th>
+							<th style="text-align: center; color: white">Action</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+	<!-- Modal Choix de l'exercice -->
+		<script>
+		$(document).ready(function() {
+			$("#myModal_exercice").modal();
+			$("select.country").change(function() {
+				var selectedCountry = $(this).children("option:selected").val();
+				$("#idexercice").val(selectedCountry);
+				var tablee = $('#employeesTable').DataTable({
+					"sAjaxSource": "api/get_client_site_exercice_rd/" + selectedCountry,
+					"sAjaxDataProp": "",
+					"responsive": true,
+					"order": [
+						[
+							0, "asc"
+						]
+					],
+					"oLanguage": {
+						"sUrl": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/French.json"
+					},
+					"aoColumns": [{
+							"mData": "idclient"
+						}, {
+							"mData": "client"
+						}, {
+							"mData": "idsite"
+						}, {
+							"mData": "adresse"
+						}, {
+							"mData": null,
+							"width": "1px",
+							"className": "center",
+							render: function(data, type, row) {
+								return '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a  href="' + data.idclient + '  "    id="editebutton" class=" glyphicon glyphicon-plus "></a> &nbsp; ';
+							},
+							"targets": -1
+						}]
+						// 																						
+				})
+				$("#myModal_exercice").modal("hide");
+			});
+		});
+			</script>
+		<div id="myModal_exercice" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="panel panel-danger" style="margin-top: -16px;">
+					<div class="panel-heading">
+						<span class="fa fa-handshake-o"></span>&nbsp;&nbsp;&nbsp; Choix de
+						l'exercice :  Risque divers
+					</div>
+					<div class="panel-body" style="padding-bottom: 0px;">
+						<div class="info_assure">
+							<div class="row">
+								<div class="col-sm-12">
+									<label>Exercice:</label> <select class="form-control  country "
+										style="margin-bottom: 22px;">
+										<option>sélectionnez votre Exercice</option>
+										<option>2021</option>
+										<option>2020</option>
+										<option>2019</option>
+										<option>2018</option>
+										<option>2017</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	<!-- formulaire des quittances -->
+		<div class="myforme">
+			<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document" style="width: 85%;">
+					<div class="modal-content">
+						<div class="modal-header"
+							style="border-bottom: 1px solid #d41d1d; background-color: #fcf8e3; box-shadow: inset -1px 1px 8px 6px #a94442;">
+							<h5 class="modal-title" id="exampleModalLabel"
+								style="font-size: 20px; font-weight: bold; text-align: center; font-style: italic;">Facturation
+								Détaillée - Matu Assurance</h5>
+							<a th:href="@{/}"
+								style="font-size: 18px; font-weight: bold; float: right; margin-top: -25px;"
+								class="button">x</a>
+						</div>
+						<div class="modal-body">
+							<!--    ----------------------------------Début----------------------- -->
+							<div class="col-md-12">
+								<!-- Custom Tabs -->
+								<div class="nav-tabs-custom">
+									<ul class="nav nav-tabs">
+										<li class="active"><a href="#tab_1" data-toggle="tab"
+											aria-expanded="true" style=""><i class="fa fa-fw fa-car"></i>Facture
+												détaillée</a></li>
+									</ul>
+									<div class="tab-content">
+										<form id="frm-example" action="">
+											<div class="tab-pane active" id="tab_1">
+												<div class="panel panel-success" style="margin-top: 5px;">
+													<div class="panel-heading">
+														<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;Quittances
+														de client sélectionnées (Risque Divers)
+													</div>
+													<div class="scrollmenu panel-body"
+														style="padding-bottom: 0px; margin-top: 0px;">
+														<div class="panel panel-primary">
+
+															<div class="panel-body">
+
+																<table id="table_quittances"
+																	class="table  table-bordered responsive "
+																	style="width: 100%">
+
+																	<thead class="bg-primary"
+																		style="background-color: #0e983a;">
+																		<tr>
+																			<th style="text-align: center;"></th>
+																			<!-- <th style="text-align: center;">Client</th> -->
+																			<th style="text-align: center;">Police</th>
+																			<th style="text-align: center;">Effet</th>
+																			<th style="text-align: center;">Expiration</th>
+																			<th style="text-align: center;">Avenant</th>
+																			
+													
+																			<th style="text-align: center;">Quittance</th>
+																			<th style="text-align: center;">PHT</th>
+																			<th style="text-align: center;">Taxe</th>
+																			<th style="text-align: center;">PTTC</th>
+																		</tr>
+																	</thead>
+																</table>
+																<hr>
+																<p>
+																	<button style="float: right; font-size: 18px;"
+																		class="btn-primary">
+																		<i class=" glyphicon glyphicon-print"></i>&nbsp;&nbsp;Générer
+																		La Facture
+																	</button>
+																</p>
+																<pre hidden id="example-console-rows"></pre>
+																<pre hidden id="example-console-form"></pre>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+									<!-- /.tab-content -->
+								</div>
+								<!-- nav-tabs-custom -->
+							</div>
+							<!--    ----------------------------------Fin-------------------------  -->
+						</div>
+						<div class="modal-footer"
+							style="margin-top: -30px; padding-top: 6px; padding-bottom: 7px; border-top: 2px solid #a94442;">
+							<a th:href="@{/}"
+								style="font-size: 16px; font-weight: bold; float: right; margin-top: -10px;"
+								class="button">Fermer</a> <input id="exercice" name="text"
+								type="hidden" value="2019"> <input id="idclient"
+								name="text" type="hidden" value="11111"> <input
+								id="quittances" name="text" type="hidden" value="11111">
+						</div>
+					</div>
+				</div>
+				<!-- Modal -->
+			<!-- 	<div class="modal fade" id="exampleModal3" tabindex="-1"
+					role="dialog" aria-labelledby="exampleModalLabel"
+					aria-hidden="true">
+					<form th:action="@{/delete_contrat}" method="POST">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel">Suppression
+										d'une contrat Wafa Ima Assistance</h5>
+									<button type="button" class="close" data-dismiss="modal"
+										aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">Voulez vous supprimer cette
+									élément !</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary"
+										data-dismiss="modal">Fermer</button>
+									<a href="" class="btn btn-primary" id="delete">Supprimer</a>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div> -->
+			</div>
+		</div>
+
+
+	</div><!-- fin div de container -->
+</body>
+</html>

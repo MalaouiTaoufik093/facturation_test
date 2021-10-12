@@ -1,0 +1,93 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" dir="ltr">-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title></title>
+<!-- <link rel="stylesheet" href="/css/style2.css"> -->
+<link rel="stylesheet" href="https://beleefmarokko.com//style2.css">
+
+
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+	charset="utf-8"></script>
+</head>
+<body>
+
+	<div class="navbar navbar-inverse navbar-fixed-top" th:fragment="header">
+	 <section id="container" class="">
+		<header class="header dark-bg">
+			<div class="toggle-nav">
+				<div class="icon-reorder tooltips"
+					data-original-title="Toggle Navigation" data-placement="bottom">
+					<i class="icon_menu"></i>
+				</div>
+			</div>
+			<!--logo start-->
+			<!-- <a href="index.html" class="logo"> <img
+				style="height: 61px; width: 231px; margin-left: 2px; margin-top: -13px;"
+				src="../../resources/static/images/pdf.png" />
+			</a> -->
+		</header>
+		<aside>
+			<div id="sidebar" class="nav-collapse " tabindex="5000"
+				style="overflow: hidden; outline: none;">
+				<!-- sidebar menu start-->
+				<ul class="sidebar-menu">
+				<li class=""><a class="" href="/"> <i class="fa fa-home"></i>&nbsp;
+							&nbsp; <span>***********</span>
+					</a></li>
+					
+					<li class=""><a class="" href="/etat_factures"> <i class="fa fa-address-card-o"></i>&nbsp; &nbsp; <span>Etat de Factures</span></a></li>
+
+					<button class="dropdown-btn "><i class="fa fa-list-alt" style="font-size: 23px;"> </i>&nbsp;&nbsp;<span>Facture Mono</span> <i class="fa fa-caret-down"></i></button>
+					<div class="dropdown-container">
+					   <li><a href="/">Fcature Auto Détaillé</a></li>
+					   <li><a href="/facture_globale">Fcature Auto Globale</a></li>
+					</div>
+
+					<button class="dropdown-btn"><i class="fa fa-list-alt" style="font-size: 23px;"></i>&nbsp;&nbsp;<span>Facture Flotte</span> <i class="fa fa-caret-down"></i>
+					</button>
+					<div class="dropdown-container active">
+						<li><a href="/rd">Fcature Globale avec retrait</a></li>
+						<li><a href="/rd">Fcature Globale sans retrait</a></li>
+					</div>
+
+
+					<button class="dropdown-btn"><i class="fa fa-list-alt" style="font-size: 23px;"> </i>&nbsp;&nbsp;<span>Facture	RD</span> <i class="fa fa-caret-down"></i>
+					</button>
+					<div class="dropdown-container">
+						<li><a href="/etat_factures">Facture RD Détaillé</a></li>
+						<li><a href="/facture_globale">Facture RD Globale</a></li>
+					</div>
+
+					<script>
+						var dropdown = document
+								.getElementsByClassName("dropdown-btn");
+						var i;
+
+						for (i = 0; i < dropdown.length; i++) {
+							dropdown[i].addEventListener("click", function() {
+								this.classList.toggle("active");
+								var dropdownContent = this.nextElementSibling;
+								if (dropdownContent.style.display === "block") {
+									dropdownContent.style.display = "none";
+								} else {
+									dropdownContent.style.display = "block";
+								}
+							});
+						}
+					</script>		
+				</ul>
+				<!-- sidebar menu end-->
+			</div>
+		</aside>
+	</section>
+	 
+	 
+	</div>
+
+</body>
+</html>
