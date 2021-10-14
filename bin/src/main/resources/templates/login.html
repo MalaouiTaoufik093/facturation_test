@@ -1,0 +1,87 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" dir="ltr">-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title></title>
+<!-- <link rel="stylesheet" href="/css/style3.css"> -->
+<!--  --><link rel="stylesheet" href="http://opreisinmarokko.com/test/taoufik/style3.css">
+ <link href="css/style2.css" rel="stylesheet"> 
+
+
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+	charset="utf-8"></script>
+</head>
+<body>
+
+	<!--<form action="index.html" class="login-form">-->
+	<form th:action="@{/login}" method="post" class="login-form" style="    padding: 60px 40px;">
+		   <h1 style="margin-bottom: 0px;">Facturation </h1>
+
+
+
+
+
+
+		<div th:if="${param.error}">
+			<div class="alert alert-danger">Invalid username or password.</div>
+		</div>
+		<div th:if="${param.logout}">
+			<div class="alert alert-info">You have been logged out.</div>
+		</div>
+		<!--        -->
+		<div class="form-group txtb">
+			<!--            <label for="username">Username</label>:-->
+			<input type="text" id="username" name="username" class="form-control"
+				autofocus="autofocus" placeholder="Username" />
+			<!--            <span data-placeholder="Username"></span>-->
+		</div>
+		<!--    <div class="txtb">-->
+		<!--        <input type="text">-->
+		<!--        <span data-placeholder="Username"></span>-->
+		<!--    </div>-->
+		<div class="form-group txtb">
+			<!--            <label for="password">Password</label>: -->
+			<input type="password" id="password" name="password"
+				class="form-control" placeholder="Password" />
+		</div>
+		<!--    <div class="txtb">-->
+		<!--        <input type="password">-->
+		<!--        <span data-placeholder="Password"></span>-->
+		<!--    </div>-->
+		<div class="form-group">
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">
+					<!--                    <input type="submit" class="logbtn" value="Login">-->
+					<input type="submit" name="login-submit" id="login-submit"
+						class="form-control btn btn-primary logbtn" value="Connecter" />
+				</div>
+			</div>
+		</div>
+		<!-- 		<div class="form-group bottom-text"> -->
+		<!-- 			<span>Don't have account?<a href="/" -->
+		<!-- 				th:href="@{/registration}"> Register here </a></span> -->
+		<!-- 		</div> -->
+		<!--    <div class="bottom-text">-->
+		<!--        Don't have account? <a href="#">Sign up</a>-->
+		<!--    </div>-->
+
+	</form>
+
+	<script type="text/javascript">
+		$(".txtb input").on("focus", function() {
+			$(this).addClass("focus");
+		});
+
+		$(".txtb input").on("blur", function() {
+			if ($(this).val() == "")
+				$(this).removeClass("focus");
+		});
+	</script>
+
+
+</body>
+</html>
